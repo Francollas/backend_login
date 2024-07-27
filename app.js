@@ -4,18 +4,20 @@ const http=require(`http`).Server(app);
 
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb+srv://frnbjr:pi7imy6w8ThT5ont@login.luwik3e.mongodb.net/?retryWrites=true&w=majority&appName=login")
+mongoose.connect("mongodb+srv://frnbjr:30Rdqhp3a75y72L3@test-pro-db.qumop9d.mongodb.net/?retryWrites=true&w=majority&appName=test-pro-db")
 
 const User = require('./models/userModel');
 
 async function insert() {
 
     await User.create({
-        name: 'FNBJ',
+        name: 'frnbjr',
         email: 'fnbjr@gmail.com',
-        password: 'pi7imy6w8ThT5ont',
+         
     });
 }
+
+insert();
 http.listen(3000, function(){
     console.log('Server is running');
 });
